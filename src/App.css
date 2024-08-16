@@ -1,0 +1,192 @@
+/* @font-face {
+  font-family: Professional;
+  src: url(assets/sleek.otf);
+}
+
+@font-face {
+  font-family: Playful;
+  src: url(assets/Haritego.otf);
+} */
+
+html, body, #root, .app {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+}
+
+body {
+  background:
+      conic-gradient(at 10% 50%,#0000 75%,#000000 0),
+      conic-gradient(at 10% 50%,#0000 75%,#000000 0) calc(1*32px) calc(3*32px),
+      conic-gradient(at 10% 50%,#0000 75%,#000000 0) calc(2*32px) calc(1*32px),
+      conic-gradient(at 10% 50%,#0000 75%,#000000 0) calc(3*32px) calc(4*32px),
+      conic-gradient(at 10% 50%,#0000 75%,#000000 0) calc(4*32px) calc(2*32px),
+      conic-gradient(at 50% 10%,#0000 75%,#000000 0) 0 calc(4*32px),
+      conic-gradient(at 50% 10%,#0000 75%,#000000 0) calc(1*32px) calc(2*32px),
+      conic-gradient(at 50% 10%,#0000 75%,#000000 0) calc(2*32px) 0,
+      conic-gradient(at 50% 10%,#0000 75%,#000000 0) calc(3*32px) calc(3*32px),
+      conic-gradient(at 50% 10%,#0000 75%,#000000 0) calc(4*32px) calc(1*32px),
+      #171a1c;
+background-size: 160px 160px;
+
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  font-size: 60px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}
+
+.navtext {
+  color: yellow;
+}
+
+.active {
+  color: orange;
+}
+
+.torso {
+  height: 100%;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px pink dotted;
+
+
+}
+
+
+.mic-container {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  color: yellow;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1px white solid;
+  border-radius: 10px;
+  /* overflow: scroll; */
+}
+
+.mic-list {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  /* border: 1px white solid; */
+  border-radius: 10px;
+  overflow: scroll;
+}
+
+.mic-card {
+  border: 1px green solid;
+  border-radius: 10px;
+  color: yellow;
+  background-color: black;
+  padding: 10px;
+
+}
+
+.label {
+  font-size: 40px;
+  color: #f19fdf;
+}
+
+
+
+
+.footer {
+  background-color: #0047ab;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+
+  padding: 10px 0;
+
+  font-size: 20px;
+}
+
+.mic-container, .header, .footer {
+  background: rgba(255,255,255,0.2);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255,255,255,0.5);
+  /* border-radius: 10px; */
+}
+
+.header {
+  border: 0px;
+  /* border-bottom: 1px solid rgba(255,255,255,0.5); */
+}
+
+.footer {
+  border: 0px;
+  /* border-top: 1px solid rgba(255,255,255,0.5); */
+}
+
+.header, .footer {
+  color: #f19fdf;
+  
+}
+
+.link-color-override, .link-color-override:hover {
+  color: #f19fdf;
+  position: relative; 
+  
+}
+
+.link-color-override::before,
+.link-color-override::after {
+  color: #f19fdf;
+  content: ''; /* Empty content for the pseudo-elements */
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px; /* Thickness of the border */
+  background-color: pink; /* Color of the border */
+  transform: scaleX(0); /* Start with no border visible */
+  transition: transform 0.3s ease; /* Smooth transition for the border */
+}
+
+.link-color-override:hover::before,
+.link-color-override:hover::after {
+  transform: scaleX(1); /* Expand the borders on hover */
+  color: #f19fdf;
+}
+
+
+.header, .label {
+  font-family: 'Professional';
+}
+
+
