@@ -9,6 +9,7 @@ import './App.css'
 import Header from './components/Header'
 import Nav from './components/Nav'
 import Torso from './components/Torso'
+import MicDetails from './components/MicDetails'
 // import Footer from './components/Footer'
 
 // import RecipeList from './components/RecipeList'
@@ -17,13 +18,14 @@ import Torso from './components/Torso'
 export default function App() {
   
   const [weekday, setWeekday] = useState("");
+  const [selectedMic, setSelectedMic] = useState("")
 
   return (
     <div className='app'>
 
     <Header />
-    <Nav weekday={weekday} setWeekday ={setWeekday} />
     <Torso weekday={weekday} setWeekday ={setWeekday}/>
+    {/* <MicDetails selectedMic={selectedMic} setSelectedMic={setSelectedMic}/> */}
     {/* <Footer/> */}
 
 
