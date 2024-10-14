@@ -1,12 +1,33 @@
-/* @font-face {
-  font-family: Professional;
-  src: url(assets/sleek.otf);
+@font-face {
+  font-family: Banner;
+  src: url(assets/wicked.otf);
 }
 
 @font-face {
-  font-family: Playful;
-  src: url(assets/Haritego.otf);
-} */
+  font-family: WeekdayFont;
+  src: url(assets/mouse.ttf);
+}
+
+@font-face {
+  font-family: MicTitleFont;
+  src: url(assets/sunshine.ttf);
+}
+
+.header{
+  font-family: 'Banner';
+  font-size: 40px;
+}
+
+.nav {
+  font-family: 'WeekdayFont';
+  font-size: 25px;
+}
+
+.card-title {
+  /* font-family: "MicTitleFont"; */
+  font-family: 'WeekdayFont';
+  font-size: 20px;
+} 
 
 html, body, #root, .app {
   height: 100%;
@@ -43,7 +64,6 @@ body {
   align-items: center;
   justify-content: center;
   padding: 10px 0;
-  font-size: 60px;
   width: 80%;
   border-radius: 10px;
   margin-top: 10px;
@@ -64,15 +84,18 @@ body {
 
 .navtext {
   /* color: yellow; */
-  font-size: x-large;
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  padding: 0 10px;
 }
 
 .active {
   /* color: orange; */
-  border-top: 1px solid #F2BD69;
-  border-bottom: 1px solid #F2BD69;
+  border-left: 1px solid #F2BD69;
+  border-right: 1px solid #F2BD69;
+  border: 1px solid #F2BD69;
+  border-radius: 50%;
+  padding: 0 10px;
 }
 
 .torso {
@@ -101,13 +124,10 @@ body {
   /* overflow: scroll; */
 }
 
-/* .weekday-label {
-  font-size: large;
-  text-decoration: underline;
-} */
+
 
 .mic-list {
-  width: 80%;
+  width: 100%;
   height: 90%;
   padding-bottom: 50px;
   display: flex;
@@ -121,7 +141,7 @@ body {
 }
 
 .mic-card {
-  width: 300px;
+  width: 350px;
   height: 200px;
   /* border: 1px green solid; */
   border-radius: 10px;
@@ -133,7 +153,6 @@ body {
 }
 
 .card-title {
-  font-size: large;
   text-decoration: underline;
   text-align: center;
 }
@@ -155,6 +174,7 @@ body {
   background: rgb(44, 42, 42);
   padding: 20px;
   border-radius: 4px;
+  border: 1px solid orange;
   position: relative;
   width: 500px;
   max-width: 100%;
@@ -189,9 +209,12 @@ body {
   
 }
 
+.link-color-override {
+  position: relative; /* Ensure the pseudo-elements are positioned relative to the parent */
+}
+
 .link-color-override::before,
 .link-color-override::after {
-  color: #f19fdf;
   content: ''; /* Empty content for the pseudo-elements */
   position: absolute;
   left: 0;
@@ -202,19 +225,22 @@ body {
   transition: transform 0.3s ease; /* Smooth transition for the border */
 }
 
+.link-color-override::before {
+  top: 0; /* Position the top border */
+}
+
+.link-color-override::after {
+  bottom: 0; /* Position the bottom border */
+}
+
 .link-color-override:hover::before,
 .link-color-override:hover::after {
   transform: scaleX(1); /* Expand the borders on hover */
-  color: #f19fdf;
 }
 
-
-.header, .nav, .label {
-  font-family: 'Professional';
-}
 
 .header, .navtext, .mic-container, .mic-list, .mic-card {
- color: #F2BD69; 
+ color: #ec9b19; 
 }
 
 .header {
@@ -222,7 +248,7 @@ body {
 }
 
 .mic-container {
-  background-color: #11b34c;
+  background-color: #e8d88f;
 }
 
 .mic-card {
@@ -230,15 +256,26 @@ body {
 }
 
 .nav {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
 }
-
 
 
 @media (max-width: 850px) {
 
+  .header{
+    font-size: 15px;
+    width: 90%;
+  }
+  
+  .nav {
+    font-size: 20px;
+    gap: 1px;
+  }
 
-
-
+  .mic-container {
+    width: 90%;
+  }
 
 }
+
+

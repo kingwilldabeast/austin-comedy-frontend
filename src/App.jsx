@@ -17,7 +17,16 @@ import MicDetails from './components/MicDetails'
 
 export default function App() {
   
-  const [weekday, setWeekday] = useState("");
+    // Create a new Date object
+    const today = new Date();
+  
+    // Array of weekdays to get the name from the index
+    const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    
+    // Get the current day of the week
+    const todayWeekday = weekdays[today.getDay()];
+
+  const [weekday, setWeekday] = useState(todayWeekday);
   const [selectedMic, setSelectedMic] = useState("")
 
   return (
