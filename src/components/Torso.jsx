@@ -8,7 +8,7 @@ import {apiKey, sheetID} from './globals'
 
 
 export default function Torso(props) {
-  const range = "Sheet1!A1:L77";
+  const range = "Sheet1!A1:L85";
 
   
   const [micArray, setMics] = useState([])
@@ -60,7 +60,15 @@ export default function Torso(props) {
     }
   };
   
+  const sortedMicArray = micArray.sort((a, b) => {
+    const timeA = a.start_time.split(':');
+    const timeB = b.start_time.split(':');
+    
+    const hourA = timeA[0]; // Hours and minutes for timeA
+    const hourB = timeB[0]; // Hours and minutes for timeB
   
+    return hourA - hourB; // Sorts in ascending order
+  });
 
   return (
     <div className='torso'>
@@ -78,7 +86,7 @@ export default function Torso(props) {
               <p><strong>Found an error?</strong> <a className = 'link-color-override' href={"https://instagram.com/will.isenberg"} target="_blank" rel="noopener noreferrer">@will.isenberg</a></p>
             </div>
       :
-      micArray.map((item, index) => (
+      sortedMicArray.map((item, index) => (
         item.weekday == props.weekday && item.hiatus !== "hiatus" ? 
         <div key={index} onClick={() => openModal(index)} className="mic-card">
           <p className='card-title'>{item.name}</p>
