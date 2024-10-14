@@ -4,13 +4,10 @@ import {useParams, Link, useNavigate } from 'react-router-dom'
 import {Route, Routes} from 'react-router-dom'
 import Modal from './MicDetails';
 import Nav from './Nav'
+import {apiKey, sheetID} from './globals'
 
 
 export default function Torso(props) {
-  // const sheetID = process.env.REACT_APP_SHEET_ID
-  // const apiKey = process.env.REACT_APP_API_KEY
-  const sheetID = "129D4mFZUrfw_oOHJqafp9QXgpjIhbWFwlGItFa1G-oM";
-  const apiKey = "AIzaSyAQY0XtUo2Wmx-dkWzHyNWXHm7LaVrvtzc";
   const range = "Sheet1!A1:L77";
 
   

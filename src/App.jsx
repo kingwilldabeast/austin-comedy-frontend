@@ -26,6 +26,7 @@ export default function App() {
     // Get the current day of the week
     const todayWeekday = weekdays[today.getDay()];
 
+
   const [weekday, setWeekday] = useState(todayWeekday);
   const [selectedMic, setSelectedMic] = useState("")
 
@@ -33,7 +34,7 @@ export default function App() {
     <div className='app'>
 
     <Header />
-    <Torso weekday={weekday} setWeekday ={setWeekday}/>
+    <Torso weekday={weekday} setWeekday ={setWeekday} />
     {/* <MicDetails selectedMic={selectedMic} setSelectedMic={setSelectedMic}/> */}
     {/* <Footer/> */}
 
