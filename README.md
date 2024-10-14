@@ -1,8 +1,5 @@
-# React + Vite
+# Austin Comedy Open Mic Database
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to Austin, TX comedy! This website contains almost 80 open mics in the Austin area, and is used by hundreds of amateur and professional comics each week. Mics are organized by weekday.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+It is deployed at https://austin-open-mics.surge.sh.
