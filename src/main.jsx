@@ -12,3 +12,9 @@ createRoot(document.getElementById('root')).render(
     </BrowserRouter>
   </StrictMode>,
 )
+
+
+/* 
+npm run build 
+surge ./dist austin-open-mics.surge.sh  
+*/

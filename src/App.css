@@ -140,16 +140,46 @@ body {
   overflow: scroll;
 }
 
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.navtext:hover {
+  animation: wiggle 0.5s ease-in-out;
+}
+
+
+
 .mic-card {
+  position: relative;
   width: 350px;
   height: 200px;
-  /* border: 1px green solid; */
+  border: 2px rgb(0, 0, 0) solid;
   border-radius: 10px;
   /* color: yellow; */
   background-color: black;
   padding: 10px;
   margin: 10px;
   overflow: hidden;
+}
+
+.expand-card {
+  position: absolute;
+  bottom: 10px; /* Distance from the bottom */
+  right: 10px;  /* Distance from the right */
+  padding: 5px 5px;
+  background-color: rgb(255, 183, 0);
+  color: black;
+  border: none;
+  border-radius: 50%;
+}
+
+.expand-card:hover {
+  background-color: rgb(22, 146, 235);
 }
 
 .card-title {

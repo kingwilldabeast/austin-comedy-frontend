@@ -88,26 +88,30 @@ export default function Torso(props) {
       :
       sortedMicArray.map((item, index) => (
         item.weekday == props.weekday && item.hiatus !== "hiatus" ? 
-        <div key={index} onClick={() => openModal(index)} className="mic-card">
+        <div key={index} className="mic-card">
           <p className='card-title'>{item.name}</p>
           {/* <p><strong>Test ID:</strong> {index}</p> */}
           <p><strong>Start Time:</strong> {item.start_time}</p>
           <p><strong>Venue:</strong> {item.venue}</p>
           <p><strong>Address:</strong> {item.address}</p>
+          <div className='expand-card' onClick={() => openModal(index)}> info</div>
           {activeCardId === index && (  // Only show the modal for the active card
-        <Modal isOpen={true} onClose={closeModal} key={`modal-${index}`}>
+          <Modal isOpen={true} onClose={closeModal} key={`modal-${index}`}>
           <p className='card-title'>{item.name}</p>
             {/* <p><strong>Weekday:</strong> {item.weekday}</p> */}
             <p><strong>Frequency:</strong> {item.frequency}</p>
             <p><strong>Start Time:</strong> {item.start_time}</p>
             <p><strong>Venue:</strong> {item.venue}</p>
-            <p><strong>Address:</strong> {item.address}</p>
+            {/* <p><strong>Address:</strong> {item.address}</p> */}
+            <p><strong>Address:</strong> <a className = 'link-color-override' href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.address)}`} target="_blank" rel="noopener noreferrer">{item.address}</a></p>
             <p><strong>Host:</strong> {item.host}</p>
             {item.ig_link !== '' && (
             <p><strong>Instagram:</strong> <a className = 'link-color-override' href={"https://www.instagram.com/" + item.ig_link} target="_blank" rel="noopener noreferrer">{"@" + item.ig_link}</a></p>
             )}
             {item.link !== '' && (
-              <p><strong>Link:</strong> <a className = 'link-color-override' href={item.link} target="_blank" rel="noopener noreferrer">{item.link}</a></p>
+              <p><strong>Link:</strong> <a className = 'link-color-override' href={item.link} target="_blank" rel="noopener noreferrer">
+                {item.link.length > 50 ? "google sheet" : item.link}
+                </a></p>
             )}
             <p><strong>Signup:</strong> {item.signup}</p>
             <p><strong>Notes:</strong> {item.notes}</p>
