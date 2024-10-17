@@ -178,6 +178,26 @@ body {
   border-radius: 50%;
 }
 
+.custom-schedule-label {
+  position: absolute;
+  bottom: 25%;
+  left: 25%;
+  transform-origin: top left;
+  width: 150px; 
+  height: 50px;   
+  padding: 5px;
+  background-color: rgba(230, 10, 10, 0.5); 
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  transform: rotate(-20deg); 
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center;     /* Vertically center */
+  text-align: center;
+}
+
 .expand-card:hover {
   background-color: rgb(22, 146, 235);
 }
@@ -218,6 +238,7 @@ body {
   background: transparent;
   font-size: 20px;
   cursor: pointer;
+  color: red;
 }
 
 .mic-container, .header, .footer {
@@ -233,39 +254,15 @@ body {
   /* border-bottom: 1px solid rgba(255,255,255,0.5); */
 }
 
-.link-color-override, .link-color-override:hover {
+.link-color-override {
   color: #f19fdf;
   position: relative; 
+  text-decoration: underline;
   
 }
 
-.link-color-override {
-  position: relative; /* Ensure the pseudo-elements are positioned relative to the parent */
-}
-
-.link-color-override::before,
-.link-color-override::after {
-  content: ''; /* Empty content for the pseudo-elements */
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 2px; /* Thickness of the border */
-  background-color: pink; /* Color of the border */
-  transform: scaleX(0); /* Start with no border visible */
-  transition: transform 0.3s ease; /* Smooth transition for the border */
-}
-
-.link-color-override::before {
-  top: 0; /* Position the top border */
-}
-
-.link-color-override::after {
-  bottom: 0; /* Position the bottom border */
-}
-
-.link-color-override:hover::before,
-.link-color-override:hover::after {
-  transform: scaleX(1); /* Expand the borders on hover */
+.link-color-override:hover {
+  color: rgb(22, 146, 235);
 }
 
 

@@ -8,7 +8,7 @@ import {apiKey, sheetID} from './globals'
 
 
 export default function Torso(props) {
-  const range = "Sheet1!A1:L85";
+  const range = "Sheet1!A1:M100";
 
   
   const [micArray, setMics] = useState([])
@@ -81,7 +81,8 @@ export default function Torso(props) {
             <div className="mic-card">
                 <p className='card-title'>General Info</p>
               <p><strong>Daily updates:</strong> <a className = 'link-color-override' href={"https://www.instagram.com/austintexascomedy"} target="_blank" rel="noopener noreferrer">@austintexascomedy</a></p>
-              <p><strong>Raw Data:</strong> <a className = 'link-color-override' href={"https://docs.google.com/spreadsheets/d/1t0JiheP4TmhuAQR1pi3pVeI6rtGxwVoxvTtWvB0RAy4/edit?fbclid=PAZXh0bgNhZW0CMTEAAaaJzD6iavQzV8m9V1_bpEjP0oEumt5kCwAxzSl5RojUvoiHH7zbWK7PbR8_aem_ifT5NgqeydTc7C2iNMAZVQ&gid=0#gid=0"} target="_blank" rel="noopener noreferrer">Derek Dimpfl's Google sheet</a></p>
+              {/* <p><strong>Raw Data:</strong> <a className = 'link-color-override' href={"https://docs.google.com/spreadsheets/d/1t0JiheP4TmhuAQR1pi3pVeI6rtGxwVoxvTtWvB0RAy4/edit?fbclid=PAZXh0bgNhZW0CMTEAAaaJzD6iavQzV8m9V1_bpEjP0oEumt5kCwAxzSl5RojUvoiHH7zbWK7PbR8_aem_ifT5NgqeydTc7C2iNMAZVQ&gid=0#gid=0"} target="_blank" rel="noopener noreferrer">Derek Dimpfl's sheet</a></p> */}
+              <p><strong>Raw Data:</strong> <a className = 'link-color-override' href={'https://docs.google.com/spreadsheets/d/129D4mFZUrfw_oOHJqafp9QXgpjIhbWFwlGItFa1G-oM/edit?usp=sharing'} target="_blank" rel="noopener noreferrer">Google sheet</a></p>
               <p><strong>Source Code:</strong> <a className = 'link-color-override' href={"https://github.com/kingwilldabeast/austin-comedy-frontend"} target="_blank" rel="noopener noreferrer">GitHub</a></p>              
               <p><strong>Found an error?</strong> <a className = 'link-color-override' href={"https://instagram.com/will.isenberg"} target="_blank" rel="noopener noreferrer">@will.isenberg</a></p>
             </div>
@@ -93,16 +94,19 @@ export default function Torso(props) {
           {/* <p><strong>Test ID:</strong> {index}</p> */}
           <p><strong>Start Time:</strong> {item.start_time}</p>
           <p><strong>Venue:</strong> {item.venue}</p>
-          <p><strong>Address:</strong> {item.address}</p>
+          <p><strong>Address:</strong> <a className = 'link-color-override' href={`http://maps.apple.com/?q=${encodeURIComponent(item.address)}`} target="_blank" rel="noopener noreferrer">{item.address}</a></p>
+          {item.weekly !== '' ?
+          <div className='custom-schedule-label'>{item.frequency}</div>
+          :
+          null
+          }
           <div className='expand-card' onClick={() => openModal(index)}> info</div>
           {activeCardId === index && (  // Only show the modal for the active card
           <Modal isOpen={true} onClose={closeModal} key={`modal-${index}`}>
           <p className='card-title'>{item.name}</p>
-            {/* <p><strong>Weekday:</strong> {item.weekday}</p> */}
             <p><strong>Frequency:</strong> {item.frequency}</p>
             <p><strong>Start Time:</strong> {item.start_time}</p>
             <p><strong>Venue:</strong> {item.venue}</p>
-            {/* <p><strong>Address:</strong> {item.address}</p> */}
             <p><strong>Address:</strong> <a className = 'link-color-override' href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.address)}`} target="_blank" rel="noopener noreferrer">{item.address}</a></p>
             <p><strong>Host:</strong> {item.host}</p>
             {item.ig_link !== '' && (
